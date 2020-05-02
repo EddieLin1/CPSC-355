@@ -1,9 +1,9 @@
 # CPSC-355
-##Computing Machinery: 
+## Computing Machinery: 
 ```
 Working in C and ARMv8 AArch; gcc, m4, gdb
 ```
-##Assignments:
+## Assignments:
 ```
 Assignment1: 91/100
 Assignment2: 94/100

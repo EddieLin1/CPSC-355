@@ -1,0 +1,52 @@
+Script started on 2020-04-15 14:31:31-06:00
+]0;edrick.lin1@csa3:~/Desktop/assignment_6edrick.lin1@csa3:~/Desktop/assignment_6$ vim a6.asmls[Kcd assignment_6..[Kassignment_5ls[Kcd Desktopls[Kcd assignment_5..[Kassignment_6ls[Kvim a6.asm[Kvim a6.asmls[Kcd assignment_6..[Kassignment_5ls[Kcd Desktopvim a6.asmls[Kvim a5.asmls[Kvim a6.asmls[Kvim a5.asmls[Kvim a6.asmcd Desktopls[Kcd assignment_5..[Kassignment_6ls[Kvim a6.asm[K[Kedrick.lin1@csa3:~/Desktop/assignment_6$ m4 a6.asm > a5[K6.s
+]0;edrick.lin1@csa3:~/Desktop/assignment_6edrick.lin1@csa3:~/Desktop/assignment_6$ gcc a6.s -o a6
+]0;edrick.lin1@csa3:~/Desktop/assignment_6edrick.lin1@csa3:~/Desktop/assignment_6$ ./a6 input.bin
+Opening file : input.bin 
+x value               arctan(x)
+-0.60                  -0.6049900337
+-0.88                  -0.8763007629
+-0.84                  -0.8373880716
+-0.79                  -0.7920768522
+-0.74                  -0.7447624963
+-0.70                  -0.6963695959
+-0.65                  -0.6474669060
+-0.60                  -0.5982346337
+-0.55                  -0.5487793302
+-0.50                  -0.4991568108
+-0.45                  -0.4494311798
+-0.40                  -0.3996282488
+-0.35                  -0.3497671371
+-0.30                  -0.2998608886
+-0.25                  -0.2499234301
+-0.20                  -0.1999626237
+-0.15                  -0.1499849345
+-0.10                  -0.0999957267
+-0.05                  -0.0499994835
+0.00                  0.0000000000
+0.05                  0.0499995040
+0.10                  0.0999961540
+0.15                  0.1499874078
+0.20                  0.1999710187
+0.25                  0.2499453790
+0.30                  0.2999088113
+0.35                  0.3498599413
+0.40                  0.3997975702
+0.45                  0.4497206479
+0.50                  0.4996282512
+0.55                  0.5495223238
+0.60                  0.5994005961
+0.65                  0.6492625938
+0.70                  0.6991079033
+0.75                  0.7489361626
+0.80                  0.7987470539
+0.85                  0.8485402968
+0.90                  0.8983156436
+0.95                  0.9480728749
+End of file 
+]0;edrick.lin1@csa3:~/Desktop/assignment_6edrick.lin1@csa3:~/Desktop/assignment_6$ quit
+bash: quit: command not found
+]0;edrick.lin1@csa3:~/Desktop/assignment_6edrick.lin1@csa3:~/Desktop/assignment_6$ exit
+exit
+
+Script done on 2020-04-15 14:33:41-06:00

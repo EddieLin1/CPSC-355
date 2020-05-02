@@ -1,0 +1,602 @@
+Script started on 2020-03-20 13:56:09-06:00
+]0;edrick.lin1@csa3:~/Desktop/assignment_4edrick.lin1@csa3:~/Desktop/assignment_4$ ./assign4gcc assign4.s -o assign4m4 assign4.asm > assign4.s[11Pvim assign4.asmm4 assign4.asm > assign4.s
+]0;edrick.lin1@csa3:~/Desktop/assignment_4edrick.lin1@csa3:~/Desktop/assignment_4$ m4 assign4.asm > assign4.s[17P./assign4gcc assign4.s -o assign4
+]0;edrick.lin1@csa3:~/Desktop/assignment_4edrick.lin1@csa3:~/Desktop/assignment_4$ ./ [Kassign4
+Initial Pyramid Values:
+Pyramid Khafre
+Centre = (0, 0)
+Base Width = 10  Base Length = 10
+Height = 9
+Volume = 300
+
+Pyramid Cheops
+Centre = (0, 0)
+Base Width = 15  Base Length = 15
+Height = 18
+Volume = 1350
+
+New Pyramid Values:
+Pyramid Khafre
+Centre = (-23, 17)
+Base Width = 10  Base Length = 10
+Height = 9
+Volume = 300
+
+Pyramid Cheops
+Centre = (27, -10)
+Base Width = 135  Base Length = 135
+Height = 162
+Volume = 984150
+
+]0;edrick.lin1@csa3:~/Desktop/assignment_4edrick.lin1@csa3:~/Desktop/assignment_4$ gb[Kdb assign4
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign4...(no debugging symbols found)...done.
+(gdb) display/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) b main
+Breakpoint 1 at 0x4007b4
+(gdb) b new_pyramid
+Breakpoint 2 at 0x400638
+(gdb) b expand
+Breakpoint 3 at 0x400728
+(gdb) b relocate
+Breakpoint 4 at 0x400774
+(gdb) r
+Starting program: /home/uga/edrick.lin1/Desktop/assignment_4/assign4 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, 0x00000000004007b4 in main ()
+1: x/i $pc
+=> 0x4007b4 <main+32>:	bl	0x40062c <new_pyramid>
+(gdb) ni
+
+Breakpoint 2, 0x0000000000400638 in new_pyramid ()
+1: x/i $pc
+=> 0x400638 <new_pyramid+12>:	str	w2, [x9]
+(gdb) ni
+0x000000000040063c in new_pyramid ()
+1: x/i $pc
+=> 0x40063c <new_pyramid+16>:	str	w3, [x9, #4]
+(gdb) ni
+0x0000000000400640 in new_pyramid ()
+1: x/i $pc
+=> 0x400640 <new_pyramid+20>:	str	w4, [x9, #8]
+(gdb) ni
+0x0000000000400644 in new_pyramid ()
+1: x/i $pc
+=> 0x400644 <new_pyramid+24>:	str	w5, [x9, #12]
+(gdb) ni
+0x0000000000400648 in new_pyramid ()
+1: x/i $pc
+=> 0x400648 <new_pyramid+28>:	str	w6, [x9, #16]
+(gdb) ni
+0x000000000040064c in new_pyramid ()
+1: x/i $pc
+=> 0x40064c <new_pyramid+32>:	mul	w7, w4, w5
+(gdb) ni
+0x0000000000400650 in new_pyramid ()
+1: x/i $pc
+=> 0x400650 <new_pyramid+36>:	mul	w7, w7, w6
+(gdb) ni
+0x0000000000400654 in new_pyramid ()
+1: x/i $pc
+=> 0x400654 <new_pyramid+40>:	mov	w10, #0x3                   	// #3
+(gdb) ni
+0x0000000000400658 in new_pyramid ()
+1: x/i $pc
+=> 0x400658 <new_pyramid+44>:	sdiv	w7, w7, w10
+(gdb) ni
+0x000000000040065c in new_pyramid ()
+1: x/i $pc
+=> 0x40065c <new_pyramid+48>:	str	w7, [x9, #20]
+(gdb) ni
+0x0000000000400660 in new_pyramid ()
+1: x/i $pc
+=> 0x400660 <new_pyramid+52>:	ldr	x10, [x9]
+(gdb) ni
+0x0000000000400664 in new_pyramid ()
+1: x/i $pc
+=> 0x400664 <new_pyramid+56>:	str	x10, [x11]
+(gdb) ni
+0x0000000000400668 in new_pyramid ()
+1: x/i $pc
+=> 0x400668 <new_pyramid+60>:	ldur	x10, [x9, #4]
+(gdb) ni
+0x000000000040066c in new_pyramid ()
+1: x/i $pc
+=> 0x40066c <new_pyramid+64>:	stur	x10, [x11, #4]
+(gdb) ni
+0x0000000000400670 in new_pyramid ()
+1: x/i $pc
+=> 0x400670 <new_pyramid+68>:	ldr	x10, [x9, #8]
+(gdb) ni
+0x0000000000400674 in new_pyramid ()
+1: x/i $pc
+=> 0x400674 <new_pyramid+72>:	str	x10, [x11, #8]
+(gdb) ni
+0x0000000000400678 in new_pyramid ()
+1: x/i $pc
+=> 0x400678 <new_pyramid+76>:	ldur	x10, [x9, #12]
+(gdb) ni
+0x000000000040067c in new_pyramid ()
+1: x/i $pc
+=> 0x40067c <new_pyramid+80>:	stur	x10, [x11, #12]
+(gdb) 
+0x0000000000400680 in new_pyramid ()
+1: x/i $pc
+=> 0x400680 <new_pyramid+84>:	ldr	x10, [x9, #16]
+(gdb) ni
+0x0000000000400684 in new_pyramid ()
+1: x/i $pc
+=> 0x400684 <new_pyramid+88>:	str	x10, [x11, #16]
+(gdb) ni
+0x0000000000400688 in new_pyramid ()
+1: x/i $pc
+=> 0x400688 <new_pyramid+92>:	ldur	x10, [x9, #20]
+(gdb) ni
+0x000000000040068c in new_pyramid ()
+1: x/i $pc
+=> 0x40068c <new_pyramid+96>:	stur	x10, [x11, #20]
+(gdb) ni
+0x0000000000400690 in new_pyramid ()
+1: x/i $pc
+=> 0x400690 <new_pyramid+100>:	ldp	x29, x30, [sp], #48
+(gdb) ni
+0x0000000000400694 in new_pyramid ()
+1: x/i $pc
+=> 0x400694 <new_pyramid+104>:	ret
+(gdb) ni
+0x00000000004007b8 in main ()
+1: x/i $pc
+=> 0x4007b8 <main+36>:	add	x11, x29, #0x28
+(gdb) ni
+0x00000000004007bc in main ()
+1: x/i $pc
+=> 0x4007bc <main+40>:	mov	w2, #0x0                   	// #0
+(gdb) ni
+0x00000000004007c0 in main ()
+1: x/i $pc
+=> 0x4007c0 <main+44>:	mov	w3, #0x0                   	// #0
+(gdb) ni
+0x00000000004007c4 in main ()
+1: x/i $pc
+=> 0x4007c4 <main+48>:	mov	w4, #0xf                   	// #15
+(gdb) ni
+0x00000000004007c8 in main ()
+1: x/i $pc
+=> 0x4007c8 <main+52>:	mov	w5, #0xf                   	// #15
+(gdb) ni
+0x00000000004007cc in main ()
+1: x/i $pc
+=> 0x4007cc <main+56>:	mov	w6, #0x12                  	// #18
+(gdb) ni
+0x00000000004007d0 in main ()
+1: x/i $pc
+=> 0x4007d0 <main+60>:	bl	0x40062c <new_pyramid>
+(gdb) ni
+
+Breakpoint 2, 0x0000000000400638 in new_pyramid ()
+1: x/i $pc
+=> 0x400638 <new_pyramid+12>:	str	w2, [x9]
+(gdb) ni
+0x000000000040063c in new_pyramid ()
+1: x/i $pc
+=> 0x40063c <new_pyramid+16>:	str	w3, [x9, #4]
+(gdb) ni
+0x0000000000400640 in new_pyramid ()
+1: x/i $pc
+=> 0x400640 <new_pyramid+20>:	str	w4, [x9, #8]
+(gdb) 
+0x0000000000400644 in new_pyramid ()
+1: x/i $pc
+=> 0x400644 <new_pyramid+24>:	str	w5, [x9, #12]
+(gdb) ni
+0x0000000000400648 in new_pyramid ()
+1: x/i $pc
+=> 0x400648 <new_pyramid+28>:	str	w6, [x9, #16]
+(gdb) ni
+0x000000000040064c in new_pyramid ()
+1: x/i $pc
+=> 0x40064c <new_pyramid+32>:	mul	w7, w4, w5
+(gdb) ni
+0x0000000000400650 in new_pyramid ()
+1: x/i $pc
+=> 0x400650 <new_pyramid+36>:	mul	w7, w7, w6
+(gdb) ni
+0x0000000000400654 in new_pyramid ()
+1: x/i $pc
+=> 0x400654 <new_pyramid+40>:	mov	w10, #0x3                   	// #3
+(gdb) ni
+0x0000000000400658 in new_pyramid ()
+1: x/i $pc
+=> 0x400658 <new_pyramid+44>:	sdiv	w7, w7, w10
+(gdb) ni
+0x000000000040065c in new_pyramid ()
+1: x/i $pc
+=> 0x40065c <new_pyramid+48>:	str	w7, [x9, #20]
+(gdb) ni
+0x0000000000400660 in new_pyramid ()
+1: x/i $pc
+=> 0x400660 <new_pyramid+52>:	ldr	x10, [x9]
+(gdb) ni
+0x0000000000400664 in new_pyramid ()
+1: x/i $pc
+=> 0x400664 <new_pyramid+56>:	str	x10, [x11]
+(gdb) ni
+0x0000000000400668 in new_pyramid ()
+1: x/i $pc
+=> 0x400668 <new_pyramid+60>:	ldur	x10, [x9, #4]
+(gdb) ni
+0x000000000040066c in new_pyramid ()
+1: x/i $pc
+=> 0x40066c <new_pyramid+64>:	stur	x10, [x11, #4]
+(gdb) ni
+0x0000000000400670 in new_pyramid ()
+1: x/i $pc
+=> 0x400670 <new_pyramid+68>:	ldr	x10, [x9, #8]
+(gdb) ni
+0x0000000000400674 in new_pyramid ()
+1: x/i $pc
+=> 0x400674 <new_pyramid+72>:	str	x10, [x11, #8]
+(gdb) ni
+0x0000000000400678 in new_pyramid ()
+1: x/i $pc
+=> 0x400678 <new_pyramid+76>:	ldur	x10, [x9, #12]
+(gdb) ni
+0x000000000040067c in new_pyramid ()
+1: x/i $pc
+=> 0x40067c <new_pyramid+80>:	stur	x10, [x11, #12]
+(gdb) ni
+0x0000000000400680 in new_pyramid ()
+1: x/i $pc
+=> 0x400680 <new_pyramid+84>:	ldr	x10, [x9, #16]
+(gdb) ni
+0x0000000000400684 in new_pyramid ()
+1: x/i $pc
+=> 0x400684 <new_pyramid+88>:	str	x10, [x11, #16]
+(gdb) ni
+0x0000000000400688 in new_pyramid ()
+1: x/i $pc
+=> 0x400688 <new_pyramid+92>:	ldur	x10, [x9, #20]
+(gdb) ni
+0x000000000040068c in new_pyramid ()
+1: x/i $pc
+=> 0x40068c <new_pyramid+96>:	stur	x10, [x11, #20]
+(gdb) ni
+0x0000000000400690 in new_pyramid ()
+1: x/i $pc
+=> 0x400690 <new_pyramid+100>:	ldp	x29, x30, [sp], #48
+(gdb) ni
+0x0000000000400694 in new_pyramid ()
+1: x/i $pc
+=> 0x400694 <new_pyramid+104>:	ret
+(gdb) ni
+0x00000000004007d4 in main ()
+1: x/i $pc
+=> 0x4007d4 <main+64>:	ldr	w0, 0x400868 <exit+12>
+(gdb) ni
+0x00000000004007d8 in main ()
+1: x/i $pc
+=> 0x4007d8 <main+68>:	bl	0x400480 <printf@plt>
+(gdb) ni
+Initial Pyramid Values:
+0x00000000004007dc in main ()
+1: x/i $pc
+=> 0x4007dc <main+72>:	add	x0, x29, #0x10
+(gdb) ni
+0x00000000004007e0 in main ()
+1: x/i $pc
+=> 0x4007e0 <main+76>:	ldr	w1, 0x40086c <exit+16>
+(gdb) ni
+0x00000000004007e4 in main ()
+1: x/i $pc
+=> 0x4007e4 <main+80>:	bl	0x400698 <print_pyramid>
+(gdb) ni
+Pyramid Khafre
+Centre = (0, 0)
+Base Width = 10  Base Length = 10
+Height = 9
+Volume = 300
+
+0x00000000004007e8 in main ()
+1: x/i $pc
+=> 0x4007e8 <main+84>:	add	x0, x29, #0x28
+(gdb) ni
+0x00000000004007ec in main ()
+1: x/i $pc
+=> 0x4007ec <main+88>:	ldr	w1, 0x400870 <exit+20>
+(gdb) 
+0x00000000004007f0 in main ()
+1: x/i $pc
+=> 0x4007f0 <main+92>:	bl	0x400698 <print_pyramid>
+(gdb) ni
+Pyramid Cheops
+Centre = (0, 0)
+Base Width = 15  Base Length = 15
+Height = 18
+Volume = 1350
+
+0x00000000004007f4 in main ()
+1: x/i $pc
+=> 0x4007f4 <main+96>:	mov	x19, #0x0                   	// #0
+(gdb) ni
+0x00000000004007f8 in main ()
+1: x/i $pc
+=> 0x4007f8 <main+100>:	add	x20, x29, #0x10
+(gdb) ni
+0x00000000004007fc in main ()
+1: x/i $pc
+=> 0x4007fc <main+104>:	add	x21, x29, #0x28
+(gdb) ni
+0x0000000000400800 in main ()
+1: x/i $pc
+=> 0x400800 <main+108>:	bl	0x4006cc <check_eq>
+(gdb) ni
+0x0000000000400804 in main ()
+1: x/i $pc
+=> 0x400804 <main+112>:	cmp	x19, #0x1
+(gdb) ni
+0x0000000000400808 in main ()
+1: x/i $pc
+=> 0x400808 <main+116>:	b.eq	0x40085c <exit>  // b.none
+(gdb) ni
+0x000000000040080c in main ()
+1: x/i $pc
+=> 0x40080c <main+120>:	mov	x10, x21
+(gdb) ni
+0x0000000000400810 in main ()
+1: x/i $pc
+=> 0x400810 <main+124>:	mov	w19, #0x9                   	// #9
+(gdb) ni
+0x0000000000400814 in main ()
+1: x/i $pc
+=> 0x400814 <main+128>:	bl	0x40071c <expand>
+(gdb) ni
+
+Breakpoint 3, 0x0000000000400728 in expand ()
+1: x/i $pc
+=> 0x400728 <expand+12>:	ldr	w4, [x11, #8]
+(gdb) ni
+0x000000000040072c in expand ()
+1: x/i $pc
+=> 0x40072c <expand+16>:	mul	w4, w4, w19
+(gdb) ni
+0x0000000000400730 in expand ()
+1: x/i $pc
+=> 0x400730 <expand+20>:	str	w4, [x11, #8]
+(gdb) ni
+0x0000000000400734 in expand ()
+1: x/i $pc
+=> 0x400734 <expand+24>:	ldr	w5, [x11, #12]
+(gdb) ni
+0x0000000000400738 in expand ()
+1: x/i $pc
+=> 0x400738 <expand+28>:	mul	w5, w5, w19
+(gdb) ni
+0x000000000040073c in expand ()
+1: x/i $pc
+=> 0x40073c <expand+32>:	str	w5, [x11, #12]
+(gdb) ni
+0x0000000000400740 in expand ()
+1: x/i $pc
+=> 0x400740 <expand+36>:	ldr	w6, [x11, #16]
+(gdb) ni
+0x0000000000400744 in expand ()
+1: x/i $pc
+=> 0x400744 <expand+40>:	mul	w6, w6, w19
+(gdb) ni
+0x0000000000400748 in expand ()
+1: x/i $pc
+=> 0x400748 <expand+44>:	str	w6, [x11, #16]
+(gdb) ni
+0x000000000040074c in expand ()
+1: x/i $pc
+=> 0x40074c <expand+48>:	mul	w7, w4, w5
+(gdb) ni
+0x0000000000400750 in expand ()
+1: x/i $pc
+=> 0x400750 <expand+52>:	mul	w7, w7, w6
+(gdb) 
+0x0000000000400754 in expand ()
+1: x/i $pc
+=> 0x400754 <expand+56>:	mov	w10, #0x3                   	// #3
+(gdb) ni
+0x0000000000400758 in expand ()
+1: x/i $pc
+=> 0x400758 <expand+60>:	sdiv	w7, w7, w10
+(gdb) ni
+0x000000000040075c in expand ()
+1: x/i $pc
+=> 0x40075c <expand+64>:	str	w7, [x11, #20]
+(gdb) 
+0x0000000000400760 in expand ()
+1: x/i $pc
+=> 0x400760 <expand+68>:	ldp	x29, x30, [sp], #16
+(gdb) ni
+0x0000000000400764 in expand ()
+1: x/i $pc
+=> 0x400764 <expand+72>:	ret
+(gdb) ni
+0x0000000000400818 in main ()
+1: x/i $pc
+=> 0x400818 <main+132>:	add	x0, x29, #0x28
+(gdb) ni
+0x000000000040081c in main ()
+1: x/i $pc
+=> 0x40081c <main+136>:	mov	w20, #0x1b                  	// #27
+(gdb) ni
+0x0000000000400820 in main ()
+1: x/i $pc
+=> 0x400820 <main+140>:	mov	w21, #0xfffffff6            	// #-10
+(gdb) ni
+0x0000000000400824 in main ()
+1: x/i $pc
+=> 0x400824 <main+144>:	bl	0x400768 <relocate>
+(gdb) ni
+
+Breakpoint 4, 0x0000000000400774 in relocate ()
+1: x/i $pc
+=> 0x400774 <relocate+12>:	ldr	w2, [x11]
+(gdb) ni
+0x0000000000400778 in relocate ()
+1: x/i $pc
+=> 0x400778 <relocate+16>:	mov	w2, w20
+(gdb) ni
+0x000000000040077c in relocate ()
+1: x/i $pc
+=> 0x40077c <relocate+20>:	str	w2, [x11]
+(gdb) ni
+0x0000000000400780 in relocate ()
+1: x/i $pc
+=> 0x400780 <relocate+24>:	ldr	w3, [x11, #4]
+(gdb) ni
+0x0000000000400784 in relocate ()
+1: x/i $pc
+=> 0x400784 <relocate+28>:	mov	w3, w21
+(gdb) 
+0x0000000000400788 in relocate ()
+1: x/i $pc
+=> 0x400788 <relocate+32>:	str	w3, [x11, #4]
+(gdb) ni
+0x000000000040078c in relocate ()
+1: x/i $pc
+=> 0x40078c <relocate+36>:	ldp	x29, x30, [sp], #16
+(gdb) ni
+0x0000000000400790 in relocate ()
+1: x/i $pc
+=> 0x400790 <relocate+40>:	ret
+(gdb) ni
+0x0000000000400828 in main ()
+1: x/i $pc
+=> 0x400828 <main+148>:	add	x0, x29, #0x10
+(gdb) ni
+0x000000000040082c in main ()
+1: x/i $pc
+=> 0x40082c <main+152>:	mov	w20, #0xffffffe9            	// #-23
+(gdb) ni
+0x0000000000400830 in main ()
+1: x/i $pc
+=> 0x400830 <main+156>:	mov	w21, #0x11                  	// #17
+(gdb) ni
+0x0000000000400834 in main ()
+1: x/i $pc
+=> 0x400834 <main+160>:	bl	0x400768 <relocate>
+(gdb) 
+
+Breakpoint 4, 0x0000000000400774 in relocate ()
+1: x/i $pc
+=> 0x400774 <relocate+12>:	ldr	w2, [x11]
+(gdb) ni
+0x0000000000400778 in relocate ()
+1: x/i $pc
+=> 0x400778 <relocate+16>:	mov	w2, w20
+(gdb) ni
+0x000000000040077c in relocate ()
+1: x/i $pc
+=> 0x40077c <relocate+20>:	str	w2, [x11]
+(gdb) ni
+0x0000000000400780 in relocate ()
+1: x/i $pc
+=> 0x400780 <relocate+24>:	ldr	w3, [x11, #4]
+(gdb) ni
+0x0000000000400784 in relocate ()
+1: x/i $pc
+=> 0x400784 <relocate+28>:	mov	w3, w21
+(gdb) ni
+0x0000000000400788 in relocate ()
+1: x/i $pc
+=> 0x400788 <relocate+32>:	str	w3, [x11, #4]
+(gdb) ni
+0x000000000040078c in relocate ()
+1: x/i $pc
+=> 0x40078c <relocate+36>:	ldp	x29, x30, [sp], #16
+(gdb) ni
+0x0000000000400790 in relocate ()
+1: x/i $pc
+=> 0x400790 <relocate+40>:	ret
+(gdb) ni
+0x0000000000400838 in main ()
+1: x/i $pc
+=> 0x400838 <main+164>:	ldr	w0, 0x400874 <exit+24>
+(gdb) ni
+0x000000000040083c in main ()
+1: x/i $pc
+=> 0x40083c <main+168>:	bl	0x400480 <printf@plt>
+(gdb) ni
+New Pyramid Values:
+0x0000000000400840 in main ()
+1: x/i $pc
+=> 0x400840 <main+172>:	add	x0, x29, #0x10
+(gdb) ni
+0x0000000000400844 in main ()
+1: x/i $pc
+=> 0x400844 <main+176>:	ldr	w1, 0x40086c <exit+16>
+(gdb) ni
+0x0000000000400848 in main ()
+1: x/i $pc
+=> 0x400848 <main+180>:	bl	0x400698 <print_pyramid>
+(gdb) ni
+Pyramid Khafre
+Centre = (-23, 17)
+Base Width = 10  Base Length = 10
+Height = 9
+Volume = 300
+
+0x000000000040084c in main ()
+1: x/i $pc
+=> 0x40084c <main+184>:	add	x0, x29, #0x28
+(gdb) ni
+0x0000000000400850 in main ()
+1: x/i $pc
+=> 0x400850 <main+188>:	ldr	w1, 0x400870 <exit+20>
+(gdb) ni
+0x0000000000400854 in main ()
+1: x/i $pc
+=> 0x400854 <main+192>:	bl	0x400698 <print_pyramid>
+(gdb) ni
+Pyramid Cheops
+Centre = (27, -10)
+Base Width = 135  Base Length = 135
+Height = 162
+Volume = 984150
+
+0x0000000000400858 in main ()
+1: x/i $pc
+=> 0x400858 <main+196>:	b	0x40085c <exit>
+(gdb) ni
+[Inferior 1 (process 13118) exited with code 0144]
+(gdb) 
+The program is not being run.
+(gdb) ni
+The program is not being run.
+(gdb) ni
+The program is not being run.
+(gdb) ni
+The program is not being run.
+(gdb) ni
+The program is not being run.
+(gdb) qu[K[Kquit
+]0;edrick.lin1@csa3:~/Desktop/assignment_4edrick.lin1@csa3:~/Desktop/assignment_4$ exit
+exit
+
+Script done on 2020-03-20 13:57:33-06:00

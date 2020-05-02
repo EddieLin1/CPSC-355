@@ -1,0 +1,386 @@
+Script started on 2020-03-06 15:40:00-07:00
+]0;edrick.lin1@csa2:~/Desktopedrick.lin1@csa2:~/Desktop$ exitgdb assign3[13@cc assign3.s -o[C[C[C[C[C[C[C[Cm4 assign3.asm > assign3.s
+]0;edrick.lin1@csa2:~/Desktopedrick.lin1@csa2:~/Desktop$ m4 assign3.asm > assign3.sexit[Kgdb assign3[13@cc assign3.s -o[C[C[C[C[C[C[C[Cm4 assign3.asm > assign3.s[2Pgcc assign3.s -o assign3
+]0;edrick.lin1@csa2:~/Desktopedrick.lin1@csa2:~/Desktop$ gdb assign3
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign3...(no debugging symbols found)...done.
+(gdb) display/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) b loop_2
+Breakpoint 1 at 0x400690
+(gdb) r
+Starting program: /home/uga/edrick.lin1/Desktop/assign3 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Unsorted Array:
+v[0]: 359
+v[1]: 454
+v[2]: 105
+v[3]: 115
+v[4]: 81
+v[5]: 255
+v[6]: 74
+v[7]: 236
+v[8]: 297
+v[9]: 205
+v[10]: 186
+v[11]: 427
+v[12]: 498
+v[13]: 251
+v[14]: 483
+v[15]: 326
+v[16]: 124
+v[17]: 194
+v[18]: 84
+v[19]: 504
+v[20]: 283
+v[21]: 488
+v[22]: 487
+v[23]: 397
+v[24]: 374
+v[25]: 346
+v[26]: 302
+v[27]: 99
+v[28]: 51
+v[29]: 415
+v[30]: 201
+v[31]: 410
+v[32]: 358
+v[33]: 306
+v[34]: 13
+v[35]: 439
+v[36]: 49
+v[37]: 88
+v[38]: 163
+v[39]: 346
+v[40]: 293
+v[41]: 349
+v[42]: 261
+v[43]: 279
+v[44]: 88
+v[45]: 233
+v[46]: 94
+v[47]: 212
+v[48]: 427
+v[49]: 178
+v[50]: 205
+v[51]: 198
+v[52]: 155
+v[53]: 180
+v[54]: 84
+v[55]: 17
+v[56]: 14
+v[57]: 386
+v[58]: 116
+v[59]: 65
+v[60]: 289
+v[61]: 317
+v[62]: 476
+v[63]: 135
+v[64]: 112
+v[65]: 489
+v[66]: 62
+v[67]: 161
+v[68]: 65
+v[69]: 225
+v[70]: 508
+v[71]: 359
+v[72]: 62
+v[73]: 257
+v[74]: 126
+v[75]: 151
+v[76]: 490
+v[77]: 220
+v[78]: 363
+v[79]: 406
+v[80]: 399
+v[81]: 56
+v[82]: 92
+v[83]: 42
+v[84]: 236
+v[85]: 176
+v[86]: 59
+v[87]: 251
+v[88]: 50
+v[89]: 175
+v[90]: 316
+v[91]: 340
+v[92]: 492
+v[93]: 280
+v[94]: 475
+v[95]: 92
+v[96]: 258
+v[97]: 26
+v[98]: 254
+v[99]: 323
+
+Sorted Array:
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) nik[K
+0x0000000000400694 in loop_2 ()
+1: x/i $pc
+=> 0x400694 <loop_2+4>:	lsr	w24, w24, #1
+(gdb) ni
+0x0000000000400698 in loop_2 ()
+1: x/i $pc
+=> 0x400698 <loop_2+8>:	mov	w25, #0x1                   	// #1
+(gdb) ni
+0x000000000040069c in loop_2 ()
+1: x/i $pc
+=> 0x40069c <loop_2+12>:	cmp	w24, #0x0
+(gdb) ni
+0x00000000004006a0 in loop_2 ()
+1: x/i $pc
+=> 0x4006a0 <loop_2+16>:	b.le	0x400708 <print_sorted>
+(gdb) ni
+0x00000000004006a4 in loop_2 ()
+1: x/i $pc
+=> 0x4006a4 <loop_2+20>:	str	w24, [x29, #24]
+(gdb) ni
+0x00000000004006a8 in loop_2 ()
+1: x/i $pc
+=> 0x4006a8 <loop_2+24>:	str	w24, [x29, #16]
+(gdb) ni
+0x00000000004006ac in loop_3 ()
+1: x/i $pc
+=> 0x4006ac <loop_3>:	ldr	w21, [x29, #16]
+(gdb) ni
+0x00000000004006b0 in loop_3 ()
+1: x/i $pc
+=> 0x4006b0 <loop_3+4>:	cmp	w21, #0x64
+(gdb) ni
+0x00000000004006b4 in loop_3 ()
+1: x/i $pc
+=> 0x4006b4 <loop_3+8>:	b.ge	0x400690 <loop_2>  // b.tcont
+(gdb) ni
+0x00000000004006b8 in loop_3 ()
+1: x/i $pc
+=> 0x4006b8 <loop_3+12>:	add	w21, w21, #0x1
+(gdb) ni
+0x00000000004006bc in loop_3 ()
+1: x/i $pc
+=> 0x4006bc <loop_3+16>:	str	w21, [x29, #16]
+(gdb) ni
+0x00000000004006c0 in loop_3 ()
+1: x/i $pc
+=> 0x4006c0 <loop_3+20>:	ldr	w21, [x29, #16]
+(gdb) ni
+0x00000000004006c4 in loop_3 ()
+1: x/i $pc
+=> 0x4006c4 <loop_3+24>:	sub	w22, w21, w24
+(gdb) ni
+0x00000000004006c8 in loop_3 ()
+1: x/i $pc
+=> 0x4006c8 <loop_3+28>:	str	w22, [x29, #20]
+(gdb) ni
+0x00000000004006cc in loop_4 ()
+1: x/i $pc
+=> 0x4006cc <loop_4>:	ldr	w22, [x29, #20]
+(gdb) ni
+0x00000000004006d0 in loop_4 ()
+1: x/i $pc
+=> 0x4006d0 <loop_4+4>:	ldr	w20, [x19, w22, sxtw #2]
+(gdb) ni
+0x00000000004006d4 in loop_4 ()
+1: x/i $pc
+=> 0x4006d4 <loop_4+8>:	ldr	w24, [x29, #24]
+(gdb) ni
+0x00000000004006d8 in loop_4 ()
+1: x/i $pc
+=> 0x4006d8 <loop_4+12>:	add	w23, w22, w24
+(gdb) ni
+0x00000000004006dc in loop_4 ()
+1: x/i $pc
+=> 0x4006dc <loop_4+16>:	ldr	w23, [x19, w23, sxtw #2]
+(gdb) ni
+0x00000000004006e0 in loop_4 ()
+1: x/i $pc
+=> 0x4006e0 <loop_4+20>:	cmp	w20, w23
+(gdb) ni
+0x00000000004006e4 in loop_4 ()
+1: x/i $pc
+=> 0x4006e4 <loop_4+24>:	b.gt	0x4006ac <loop_3>
+(gdb) ni
+0x00000000004006ac in loop_3 ()
+1: x/i $pc
+=> 0x4006ac <loop_3>:	ldr	w21, [x29, #16]
+(gdb) ni
+0x00000000004006b0 in loop_3 ()
+1: x/i $pc
+=> 0x4006b0 <loop_3+4>:	cmp	w21, #0x64
+(gdb) ni
+0x00000000004006b4 in loop_3 ()
+1: x/i $pc
+=> 0x4006b4 <loop_3+8>:	b.ge	0x400690 <loop_2>  // b.tcont
+(gdb) $pc[K[K[Kp $pc w21[K[K[K[K[K[Kw21
+$1 = 51
+(gdb) ni
+0x00000000004006b8 in loop_3 ()
+1: x/i $pc
+=> 0x4006b8 <loop_3+12>:	add	w21, w21, #0x1
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0x0000000000400690 in loop_2 ()
+1: x/i $pc
+=> 0x400690 <loop_2>:	ldr	w24, [x29, #24]
+(gdb) c
+Continuing.
+v[1]: 508
+v[2]: 508
+v[3]: 508
+v[4]: 508
+v[5]: 508
+v[6]: 508
+v[7]: 508
+v[8]: 508
+v[9]: 508
+v[10]: 508
+v[11]: 508
+v[12]: 508
+v[13]: 508
+v[14]: 508
+v[15]: 508
+v[16]: 508
+v[17]: 508
+v[18]: 508
+v[19]: 508
+v[20]: 508
+v[21]: 508
+v[22]: 508
+v[23]: 508
+v[24]: 508
+v[25]: 508
+v[26]: 508
+v[27]: 508
+v[28]: 508
+v[29]: 508
+v[30]: 508
+v[31]: 508
+v[32]: 508
+v[33]: 508
+v[34]: 508
+v[35]: 508
+v[36]: 508
+v[37]: 508
+v[38]: 508
+v[39]: 508
+v[40]: 508
+v[41]: 508
+v[42]: 508
+v[43]: 508
+v[44]: 508
+v[45]: 508
+v[46]: 508
+v[47]: 508
+v[48]: 508
+v[49]: 508
+v[50]: 508
+v[51]: 508
+v[52]: 508
+v[53]: 508
+v[54]: 508
+v[55]: 508
+v[56]: 508
+v[57]: 508
+v[58]: 508
+v[59]: 508
+v[60]: 508
+v[61]: 508
+v[62]: 508
+v[63]: 508
+v[64]: 508
+v[65]: 508
+v[66]: 508
+v[67]: 508
+v[68]: 508
+v[69]: 508
+v[70]: 508
+v[71]: 492
+v[72]: 492
+v[73]: 492
+v[74]: 492
+v[75]: 492
+v[76]: 492
+v[77]: 492
+v[78]: 492
+v[79]: 492
+v[80]: 492
+v[81]: 475
+v[82]: 475
+v[83]: 475
+v[84]: 475
+v[85]: 475
+v[86]: 475
+v[87]: 475
+v[88]: 475
+v[89]: 475
+v[90]: 475
+v[91]: 475
+v[92]: 475
+v[93]: 475
+v[94]: 475
+v[95]: 323
+v[96]: 323
+v[97]: 323
+v[98]: 323
+v[99]: 323
+[Inferior 1 (process 22102) exited normally]
+(gdb) c[Kquit
+]0;edrick.lin1@csa2:~/Desktopedrick.lin1@csa2:~/Desktop$ exit
+exit
+
+Script done on 2020-03-06 15:41:15-07:00

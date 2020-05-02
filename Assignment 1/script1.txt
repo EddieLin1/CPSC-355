@@ -1,0 +1,205 @@
+Script started on 2020-02-03 04:10:10-07:00
+]0;edrick.lin1@csa3:~/Desktop/assignment_1edrick.lin1@csa3:~/Desktop/assignment_1$ gdb [1Pvimgdb assign1[13@cc assign1.s -o[C[C[C[C[C[C[C[C[13Pdb[C[C[C[C[C[C[C[C[13@cc assign1.s -o[C[C[C[C[C[C[C[C[13Pdb[C[C[C[C[C[C[C[Cvim[Kgdb assign1
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign1...(no debugging symbols found)...done.
+(gdb) display/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) b main
+Breakpoint 1 at 0x4005e4
+(gdb) r
+Starting program: /home/uga/edrick.lin1/Desktop/assignment_1/assign1 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, 0x00000000004005e4 in main ()
+1: x/i $pc
+=> 0x4005e4 <main+12>:	mov	x20, #0xffffffffffffff6f    	// #-145
+(gdb) ni
+0x00000000004005e8 in main ()
+1: x/i $pc
+=> 0x4005e8 <main+16>:	mov	x21, #0xffffffffffffffd4    	// #-44
+(gdb) ni
+0x00000000004005ec in main ()
+1: x/i $pc
+=> 0x4005ec <main+20>:	mov	x28, #0xfffffffffffffff6    	// #-10
+(gdb) ni
+0x00000000004005f0 in main ()
+1: x/i $pc
+=> 0x4005f0 <main+24>:	mov	x27, #0x270f                	// #9999
+(gdb) ni
+0x00000000004005f4 in loop ()
+1: x/i $pc
+=> 0x4005f4 <loop>:	cmp	x28, #0xa
+(gdb) ni
+0x00000000004005f8 in loop ()
+1: x/i $pc
+=> 0x4005f8 <loop+4>:	b.gt	0x400644 <exit>
+(gdb) ni
+0x00000000004005fc in loop ()
+1: x/i $pc
+=> 0x4005fc <loop+8>:	mul	x18, x28, x28
+(gdb) p $x19
+$1 = 2
+(gdb) p $x19[K[K20
+$2 = -145
+(gdb) p $x20[K[K21
+$3 = -44
+(gdb) p $x21[K[K[K[K[K[Kni
+0x0000000000400600 in loop ()
+1: x/i $pc
+=> 0x400600 <loop+12>:	mul	x22, x18, x18
+(gdb) ni
+0x0000000000400604 in loop ()
+1: x/i $pc
+=> 0x400604 <loop+16>:	mul	x23, x19, x22
+(gdb) ni
+0x0000000000400608 in loop ()
+1: x/i $pc
+=> 0x400608 <loop+20>:	mul	x24, x18, x20
+(gdb) ni
+0x000000000040060c in loop ()
+1: x/i $pc
+=> 0x40060c <loop+24>:	mul	x25, x21, x28
+(gdb) ni
+0x0000000000400610 in loop ()
+1: x/i $pc
+=> 0x400610 <loop+28>:	sub	x25, x25, #0xe
+(gdb) ni
+0x0000000000400614 in loop ()
+1: x/i $pc
+=> 0x400614 <loop+32>:	add	x26, x23, x24
+(gdb) ni
+0x0000000000400618 in loop ()
+1: x/i $pc
+=> 0x400618 <loop+36>:	add	x2, x26, x25
+(gdb) ni
+0x000000000040061c in loop ()
+1: x/i $pc
+=> 0x40061c <loop+40>:	add	x1, x28, #0x0
+(gdb) ni
+0x0000000000400620 in loop ()
+1: x/i $pc
+=> 0x400620 <loop+44>:	add	x28, x28, #0x1
+(gdb) ni
+0x0000000000400624 in loop ()
+1: x/i $pc
+=> 0x400624 <loop+48>:	cmp	x2, x27
+(gdb) $pc[K[K[Kp $[K$pc[K[Kx2
+$4 = 5926
+(gdb) $pc [K[K[K[Kp $p[Kx18
+$5 = 100
+(gdb) p $x18[K[K1
+$6 = -10
+(gdb) c
+Continuing.
+Current x value: -10 
+Current y value: 5926 
+Current Minimum: 5926 
+
+Current x value: -9 
+Current y value: 1759 
+Current Minimum: 1759 
+
+Current x value: -8 
+Current y value: -750 
+Current Minimum: -750 
+
+Current x value: -7 
+Current y value: -2009 
+Current Minimum: -2009 
+
+Current x value: -6 
+Current y value: -2378 
+Current Minimum: -2378 
+
+Current x value: -5 
+Current y value: -2169 
+Current Minimum: -2378 
+
+Current x value: -4 
+Current y value: -1646 
+Current Minimum: -2378 
+
+Current x value: -3 
+Current y value: -1025 
+Current Minimum: -2378 
+
+Current x value: -2 
+Current y value: -474 
+Current Minimum: -2378 
+
+Current x value: -1 
+Current y value: -113 
+Current Minimum: -2378 
+
+Current x value: 0 
+Current y value: -14 
+Current Minimum: -2378 
+
+Current x value: 1 
+Current y value: -201 
+Current Minimum: -2378 
+
+Current x value: 2 
+Current y value: -650 
+Current Minimum: -2378 
+
+Current x value: 3 
+Current y value: -1289 
+Current Minimum: -2378 
+
+Current x value: 4 
+Current y value: -1998 
+Current Minimum: -2378 
+
+Current x value: 5 
+Current y value: -2609 
+Current Minimum: -2609 
+
+Current x value: 6 
+Current y value: -2906 
+Current Minimum: -2906 
+
+Current x value: 7 
+Current y value: -2625 
+Current Minimum: -2906 
+
+Current x value: 8 
+Current y value: -1454 
+Current Minimum: -2906 
+
+Current x value: 9 
+Current y value: 967 
+Current Minimum: -2906 
+
+Current x value: 10 
+Current y value: 5046 
+Current Minimum: -2906 
+
+[Inferior 1 (process 6928) exited with code 0105]
+(gdb) ec[Kxit
+Undefined command: "exit".  Try "help".
+(gdb) quit
+]0;edrick.lin1@csa3:~/Desktop/assignment_1edrick.lin1@csa3:~/Desktop/assignment_1$ y[Kezit[K[K[Kxit
+exit
+
+Script done on 2020-02-03 04:13:40-07:00
